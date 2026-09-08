@@ -7,8 +7,9 @@ export function formatDate(date: Date): string {
 }
 
 export function truncate(text: string, length: number): string {
+  if (!text || length <= 0) return '';
   if (text.length <= length) return text;
-  return text.slice(0, length) + '...';
+  return text.slice(0, Math.max(0, length - 3)) + '...';
 }
 
 export function debounce<T extends (...args: any[]) => any>(
