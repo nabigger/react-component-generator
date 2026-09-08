@@ -1,0 +1,23 @@
+{
+  "skill_name": "create-pr",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "한국어 프로젝트에서 새 기능을 추가했어. PR 제목은 'feat(utils): 프롬프트 검증 함수 추가'이고, 설명은 '500자 제한 검증 함수를 utils.ts에 추가했습니다. TDD 방식으로 테스트도 함께 작성했습니다.'라고 해줘.",
+      "expected_output": "한국어 PR 템플릿이 적용된 PR이 생성되고, PR 제목과 설명이 정확히 포함되어 있음",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "Create a PR with title 'feat(components): add new Card component' and body 'Added a reusable Card component with proper TypeScript typing and unit tests. Supports customizable styling via CSS variables.'",
+      "expected_output": "English PR template is applied, PR title and body are correctly included",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "간단하게 PR을 만들어줘. 제목: 'chore: update dependencies' 설명: '패키지 의존성을 최신 버전으로 업데이트했습니다.'",
+      "expected_output": "프로젝트 언어 설정에 따른 적절한 템플릿이 적용되고 PR이 생성됨",
+      "files": []
+    }
+  ]
+}
