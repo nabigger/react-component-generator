@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { PromptInput } from './components/PromptInput';
 import { ComponentCard } from './components/ComponentCard';
 import { useComponentGenerator } from './hooks/useComponentGenerator';
+import { loadApiKey, saveApiKey, loadProvider, saveProvider } from './utils/localStorage';
 import type { Provider } from './types';
 import './App.css';
 
@@ -11,15 +12,25 @@ const PROVIDER_CONFIG = {
 } as const;
 
 function App() {
-  const [apiKey, setApiKey] = useState('');
+  const [apiKey, setApiKey] = useState(() => loadApiKey());
   const [showKey, setShowKey] = useState(false);
-  const [provider, setProvider] = useState<Provider>('google');
+  const [provider, setProvider] = useState<Provider>(() => loadProvider() as Provider);
   const [envKeys, setEnvKeys] = useState<Record<Provider, boolean>>({
     anthropic: false,
     google: false,
   });
   const { components, isLoading, error, generate, removeComponent, clearAll } =
     useComponentGenerator();
+
+  // API 키 변경 시 localStorage에 저장
+  useEffect(() => {
+    saveApiKey(apiKey);
+  }, [apiKey]);
+
+  // Provider 변경 시 localStorage에 저장
+  useEffect(() => {
+    saveProvider(provider);
+  }, [provider]);
 
   useEffect(() => {
     fetch('/api/config')
