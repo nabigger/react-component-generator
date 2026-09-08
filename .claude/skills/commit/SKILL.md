@@ -8,6 +8,21 @@ description: |
 compatibility: git
 ---
 
+## 구현 가이드
+
+이 스킬을 실행하려면 다음을 수행하세요:
+
+1. **git status와 git diff를 실행** — 현재 변경사항 파악
+2. **변경사항 분류** — feat/fix/refactor/chore/docs/style/test 중 분류
+3. **커밋 메시지 작성** — 한국어로 다음 형식 사용:
+   ```
+   type(scope): 한국어 제목
+   
+   본문 (선택사항)
+   ```
+4. **사용자 확인** — 변경사항과 메시지를 보여주고 승인 요청
+5. **git commit 실행** — 사용자 승인 후 커밋
+
 ## 커밋 절차
 
 ### 1단계: 변경사항 분석
