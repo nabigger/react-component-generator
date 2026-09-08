@@ -1,0 +1,23 @@
+{
+  "skill_name": "commit",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "새로운 유틸리티 함수를 추가했어. 커밋해줘",
+      "expected_output": "feat 타입의 커밋이 생성되고, 한국어 메시지가 작성되어야 함",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "config 파일에서 버그를 찾아 수정했어. 변경사항 저장해줘",
+      "expected_output": "fix 타입의 커밋이 생성되고, 수정 내용이 설명되어야 함",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "컴포넌트 구조를 개선했어. 논리적 단위로 나눠서 커밋해줘",
+      "expected_output": "여러 개의 refactor 커밋이 생성되고, 각각 명확한 메시지를 가져야 함",
+      "files": []
+    }
+  ]
+}

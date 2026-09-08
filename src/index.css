@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  /* 레트로 네온 팔레트 */
+  --bg-dark: #0a0e27;
+  --bg-surface: #1a1f3a;
+  --bg-surface-alt: #252d4d;
+  --neon-pink: #ff006e;
+  --neon-cyan: #00f5ff;
+  --neon-lime: #00ff41;
+  --neon-purple: #b100ff;
+  --neon-blue: #0080ff;
+  --text-bright: #e0e0ff;
+  --text-muted: #a0a0c0;
+}
+
+body {
+  font-family: 'Courier New', 'Courier', monospace;
+  background: linear-gradient(
+    135deg,
+    #0a0e27 0%,
+    #1a0d2e 50%,
+    #0f1a2e 100%
+  );
+  color: var(--text-bright);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(
+      0deg,
+      rgba(0, 245, 255, 0.03) 1px,
+      transparent 1px
+    );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 1;
+  animation: scanlines 8s linear infinite;
+}
+
+@keyframes scanlines {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(10px); }
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
