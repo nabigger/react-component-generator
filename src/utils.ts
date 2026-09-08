@@ -6,6 +6,11 @@ export function formatDate(date: Date): string {
   });
 }
 
+export function truncate(text: string, length: number): string {
+  if (text.length <= length) return text;
+  return text.slice(0, length) + '...';
+}
+
 export function debounce<T extends (...args: any[]) => any>(
   func: T,
   wait: number
