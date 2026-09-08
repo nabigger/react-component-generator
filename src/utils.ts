@@ -12,6 +12,10 @@ export function truncate(text: string, length: number): string {
   return text.slice(0, Math.max(0, length - 3)) + '...';
 }
 
+export function clamp(value: number, min: number, max: number): number {
+  return Math.max(min, Math.min(max, value));
+}
+
 export function debounce<T extends (...args: any[]) => any>(
   func: T,
   wait: number
