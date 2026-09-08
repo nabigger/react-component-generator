@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(.env*)",
+      "Read(*credential*)",
+      "Read(*secret*)",
+      "Read(*.key)",
+      "Read(*.pem)",
+      "Read(*.pfx)",
+      "Edit(.env*)",
+      "Edit(*credential*)",
+      "Edit(*secret*)",
+      "Edit(*.key)",
+      "Edit(*.pem)",
+      "Edit(*.pfx)",
+      "Write(.env*)",
+      "Write(*credential*)",
+      "Write(*secret*)",
+      "Write(*.key)",
+      "Write(*.pem)",
+      "Write(*.pfx)",
+      "Bash(cat .env*)",
+      "Bash(cat *credential*)",
+      "Bash(cat *secret*)",
+      "Bash(grep -r *credential*)",
+      "Bash(grep -r *secret*)"
+    ]
+  }
+}
